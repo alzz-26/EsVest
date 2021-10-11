@@ -1,0 +1,136 @@
+import React from 'react';
+import {
+  ButtonSolid,
+  ScreenContainer,
+  Surface,
+  TextField,
+  withTheme,
+} from '@draftbit/ui';
+import { StyleSheet, Text } from 'react-native';
+
+const LogInScreen = props => {
+  const { theme } = props;
+  const { navigation } = props;
+
+  const [textFieldValue, setTextFieldValue] = React.useState('');
+
+  return (
+    <ScreenContainer
+      style={{ backgroundColor: theme.colors.custom_rgb135_206_235 }}
+    >
+      <Surface style={{ backgroundColor: theme.colors.primary }}>
+        <Text style={[styles.TextUM, { color: theme.colors.strong }]}>
+          {'Log In'}
+        </Text>
+      </Surface>
+
+      <Text style={[styles.TextGj, { color: theme.colors.strong }]}>
+        {'Email'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextFieldwk}
+        placeholder="Enter email"
+        type="solid"
+        value={textFieldValue}
+        placeholderTextColor={theme.colors.medium}
+      />
+      <Text style={[styles.TextX0, { color: theme.colors.strong }]}>
+        {'Password'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextFieldWn}
+        placeholder="Enter password"
+        type="solid"
+        value={textFieldValue}
+        placeholderTextColor={theme.colors.medium}
+      />
+      <ButtonSolid
+        onPress={() => {
+          try {
+            navigation.navigate('HomeScreen');
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={[
+          styles.ButtonSolidDj,
+          {
+            backgroundColor: theme.colors.custom_rgb255_192_203,
+            color: theme.colors.custom_rgb0_0_0,
+          },
+        ]}
+        title="Log In"
+      >
+        {`Sign Up`}
+      </ButtonSolid>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  TextUM: {
+    fontSize: 20,
+    fontFamily: 'System',
+    fontWeight: '600',
+    paddingLeft: 75,
+    paddingRight: 50,
+    marginTop: 10,
+    marginLeft: 70,
+    marginRight: 70,
+  },
+  TextGj: {
+    marginTop: 50,
+    marginRight: 150,
+    marginLeft: 30,
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '500',
+  },
+  TextFieldwk: {
+    marginLeft: 30,
+    marginRight: 150,
+    left: 90,
+    bottom: 40,
+  },
+  TextX0: {
+    marginTop: 50,
+    marginRight: 150,
+    marginLeft: 30,
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '500',
+  },
+  TextFieldWn: {
+    marginLeft: 30,
+    marginRight: 150,
+    left: 90,
+    bottom: 40,
+  },
+  ButtonSolidDj: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    bottom: 40,
+    marginLeft: 50,
+    marginRight: 50,
+    marginBottom: 50,
+    marginTop: 50,
+  },
+});
+
+export default withTheme(LogInScreen);
