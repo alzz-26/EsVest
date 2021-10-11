@@ -1,5 +1,4 @@
-# EsVest
-Where Investees meet Investors
+# EsVest - Where Investees meet Investors 
 
 There are still so many small startups or ventures who don't get started due to lack of investors and also there are people who want to invest in these small ventures but don't know where to. EsVest is an app that helps to connect these investees with their future investors in a simple way. For investees, just upload your pitch deck, video pitch, all necessary details about startup or anything and post it.  Investors go through these posts , keep their views or negotiate through short messaging and then both of these groups connect with their contact details.
 
