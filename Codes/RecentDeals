@@ -1,0 +1,103 @@
+import React from 'react';
+import { CircleImage, ScreenContainer, Surface, withTheme } from '@draftbit/ui';
+import { Video } from 'expo-av';
+import { StyleSheet, Text } from 'react-native';
+
+const RecentDealsScreen = props => {
+  const { theme } = props;
+
+  return (
+    <ScreenContainer
+      style={{ backgroundColor: theme.colors.custom_rgb135_206_235 }}
+      scrollable={true}
+    >
+      <Surface style={{ backgroundColor: theme.colors.primary }}>
+        <Text style={[styles.TextbY, { color: theme.colors.strong }]}>
+          {'Recent Deals'}
+        </Text>
+      </Surface>
+      <CircleImage
+        style={styles.CircleImageVp}
+        source={{
+          uri: 'https://static.draftbit.com/images/placeholder-image.png',
+        }}
+        size={110}
+      />
+      <Text style={[styles.TextK2, { color: theme.colors.strong }]}>
+        {
+          'Name \nCategory\nShort description\nNo. of investors required\n% share\nAmount requested '
+        }
+      </Text>
+
+      <Text style={[styles.Textwg, { color: theme.colors.strong }]}>
+        {'Video Pitch '}
+      </Text>
+      <Video
+        style={styles.Videojb}
+        source={{
+          uri: 'http://static.draftbit.com/videos/intro-to-draftbit.mp4',
+        }}
+        usePoster={true}
+        posterSource={{
+          uri: 'https://static.draftbit.com/videos/intro-to-draftbit.png',
+        }}
+        resizeMode="cover"
+      />
+      <Text style={[styles.TextX5, { color: theme.colors.strong }]}>
+        {'Pitch Deck'}
+      </Text>
+      <Surface style={styles.Surfaceeq} />
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  TextbY: {
+    fontSize: 20,
+    fontFamily: 'System',
+    fontWeight: '600',
+    paddingLeft: 70,
+    paddingRight: 45,
+    marginTop: 10,
+    marginLeft: 70,
+    marginRight: 70,
+  },
+  CircleImageVp: {
+    left: 130,
+    top: 20,
+  },
+  TextK2: {
+    marginTop: 40,
+    paddingLeft: 30,
+  },
+  Textwg: {
+    marginTop: 40,
+    paddingLeft: 30,
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '600',
+  },
+  Videojb: {
+    height: 215,
+    width: 300,
+    marginLeft: 30,
+    marginTop: 10,
+  },
+  TextX5: {
+    marginTop: 40,
+    paddingLeft: 30,
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '600',
+  },
+  Surfaceeq: {
+    width: 300,
+    height: 200,
+    marginLeft: 40,
+    marginTop: 10,
+  },
+});
+
+export default withTheme(RecentDealsScreen);
