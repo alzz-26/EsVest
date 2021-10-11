@@ -1,0 +1,103 @@
+import React from 'react';
+import Images from '../config/Images';
+import {
+  ButtonSolid,
+  CircleImage,
+  ScreenContainer,
+  withTheme,
+} from '@draftbit/ui';
+import { StyleSheet } from 'react-native';
+
+const OnBoardScreen = props => {
+  const { theme } = props;
+  const { navigation } = props;
+
+  return (
+    <ScreenContainer
+      style={[
+        styles.screen,
+        { backgroundColor: theme.colors.custom_rgb135_206_235 },
+      ]}
+    >
+      <CircleImage
+        style={styles.CircleImageyf}
+        source={Images.EsVest}
+        size={200}
+      />
+      <ButtonSolid
+        onPress={() => {
+          try {
+            navigation.navigate('RegisterScreen');
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={[
+          styles.ButtonSolidmZ,
+          {
+            backgroundColor: theme.colors.custom_rgb255_192_203,
+            color: theme.colors.custom_rgb0_0_0,
+          },
+        ]}
+        title="Register"
+      >
+        {`Sign Up`}
+      </ButtonSolid>
+
+      <ButtonSolid
+        onPress={() => {
+          try {
+            navigation.navigate('LogInScreen');
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={[
+          styles.ButtonSolidzk,
+          {
+            backgroundColor: theme.colors.custom_rgb255_192_203,
+            color: theme.colors.custom_rgb0_0_0,
+          },
+        ]}
+        title="Login"
+      >
+        {`Sign Up`}
+      </ButtonSolid>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  CircleImageyf: {
+    top: 40,
+    left: 85,
+    right: 50,
+    overflow: 'hidden',
+    marginTop: 20,
+  },
+  ButtonSolidmZ: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '700',
+    textAlign: 'center',
+    marginRight: 50,
+    marginLeft: 50,
+    top: 150,
+    fontSize: 20,
+  },
+  ButtonSolidzk: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '700',
+    textAlign: 'center',
+    marginRight: 50,
+    marginLeft: 50,
+    top: 200,
+    fontSize: 20,
+  },
+  screen: {
+    opacity: 1,
+  },
+});
+
+export default withTheme(OnBoardScreen);
