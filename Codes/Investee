@@ -1,0 +1,162 @@
+import React from 'react';
+import {
+  ButtonSolid,
+  CircleImage,
+  ScreenContainer,
+  Surface,
+  withTheme,
+} from '@draftbit/ui';
+import { Video } from 'expo-av';
+import { StyleSheet, Text } from 'react-native';
+
+const InvesteeScreen = props => {
+  const { theme } = props;
+  const { navigation } = props;
+
+  return (
+    <ScreenContainer
+      style={{ backgroundColor: theme.colors.custom_rgb135_206_235 }}
+      scrollable={true}
+    >
+      <Surface style={{ backgroundColor: theme.colors.primary }}>
+        <Text style={[styles.Text_0t, { color: theme.colors.strong }]}>
+          {'Investee'}
+        </Text>
+      </Surface>
+      <CircleImage
+        style={styles.CircleImageY6}
+        source={{
+          uri: 'https://static.draftbit.com/images/placeholder-image.png',
+        }}
+        size={110}
+      />
+      <Text style={[styles.Textbr, { color: theme.colors.strong }]}>
+        {
+          'Name \nCategory\nShort description\nNo. of investors required\n% share\nAmount requested '
+        }
+      </Text>
+
+      <Text style={[styles.Textj4, { color: theme.colors.strong }]}>
+        {'Video Pitch '}
+      </Text>
+      <Video
+        style={styles.VideoXa}
+        source={{
+          uri: 'http://static.draftbit.com/videos/intro-to-draftbit.mp4',
+        }}
+        usePoster={true}
+        posterSource={{
+          uri: 'https://static.draftbit.com/videos/intro-to-draftbit.png',
+        }}
+        resizeMode="cover"
+      />
+      <Text style={[styles.Text_1o, { color: theme.colors.strong }]}>
+        {'Pitch Deck'}
+      </Text>
+      <Surface style={styles.Surfacehl} />
+      <ButtonSolid
+        style={[
+          styles.ButtonSolidBd,
+          {
+            backgroundColor: theme.colors.custom_rgb255_192_203,
+            color: theme.colors.custom_rgb0_0_0,
+          },
+        ]}
+        title="Edit app"
+      >
+        {`Sign Up`}
+      </ButtonSolid>
+
+      <ButtonSolid
+        onPress={() => {
+          try {
+            navigation.navigate('ConnectScreen');
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={[
+          styles.ButtonSolidHb,
+          {
+            backgroundColor: theme.colors.custom_rgb255_192_203,
+            color: theme.colors.custom_rgb0_0_0,
+          },
+        ]}
+        title="Check Investors"
+      >
+        {`Sign Up`}
+      </ButtonSolid>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  Text_0t: {
+    fontSize: 20,
+    fontFamily: 'System',
+    fontWeight: '600',
+    paddingLeft: 75,
+    paddingRight: 50,
+    marginTop: 10,
+    marginLeft: 70,
+    marginRight: 70,
+  },
+  CircleImageY6: {
+    left: 130,
+    top: 20,
+  },
+  Textbr: {
+    marginTop: 40,
+    paddingLeft: 30,
+  },
+  Textj4: {
+    marginTop: 40,
+    paddingLeft: 30,
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '600',
+  },
+  VideoXa: {
+    height: 215,
+    width: 300,
+    marginLeft: 30,
+    marginTop: 10,
+  },
+  Text_1o: {
+    marginTop: 40,
+    paddingLeft: 30,
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '600',
+  },
+  Surfacehl: {
+    width: 300,
+    height: 200,
+    marginLeft: 40,
+    marginTop: 10,
+  },
+  ButtonSolidBd: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 20,
+    marginBottom: 15,
+  },
+  ButtonSolidHb: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 20,
+    marginBottom: 15,
+  },
+});
+
+export default withTheme(InvesteeScreen);
