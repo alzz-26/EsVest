@@ -1,0 +1,226 @@
+import React from 'react';
+import {
+  ButtonSolid,
+  ScreenContainer,
+  Surface,
+  TextField,
+  withTheme,
+} from '@draftbit/ui';
+import { Image, StyleSheet, Text } from 'react-native';
+
+const RegisterScreen = props => {
+  const { theme } = props;
+  const { navigation } = props;
+
+  const [textFieldValue, setTextFieldValue] = React.useState('');
+
+  return (
+    <ScreenContainer
+      style={{ backgroundColor: theme.colors.custom_rgb135_206_235 }}
+    >
+      <Surface style={{ backgroundColor: theme.colors.primary }} elevation={0}>
+        <Text
+          style={[styles.Texts0, { color: theme.colors.strong }]}
+          ellipsizeMode="middle"
+        >
+          {'Register'}
+        </Text>
+      </Surface>
+
+      <Text style={[styles.TextxA, { color: theme.colors.strong }]}>
+        {'Name'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextField_3s}
+        placeholder="Enter name"
+        type="solid"
+        value={textFieldValue}
+        placeholderTextColor={theme.colors.medium}
+      />
+      <Text style={[styles.TextFC, { color: theme.colors.strong }]}>
+        {'Email'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextFieldyu}
+        placeholder="Enter email"
+        type="solid"
+        value={textFieldValue}
+        placeholderTextColor={theme.colors.medium}
+      />
+      <Text style={[styles.Text_3V, { color: theme.colors.strong }]}>
+        {'Password'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextFieldyE}
+        placeholder="Enter password"
+        type="solid"
+        value={textFieldValue}
+        placeholderTextColor={theme.colors.medium}
+      />
+      <Text style={[styles.TextQS, { color: theme.colors.strong }]}>
+        {'Confirm Password'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextFieldSL}
+        placeholder="Confirm Password"
+        type="solid"
+        value={textFieldValue}
+        placeholderTextColor={theme.colors.medium}
+      />
+      <Text style={[styles.TextAI, { color: theme.colors.strong }]}>
+        {'Identity'}
+      </Text>
+      <Image
+        style={styles.ImageUi}
+        source={{
+          uri: 'https://static.draftbit.com/images/placeholder-image.png',
+        }}
+        resizeMode="cover"
+      />
+      <ButtonSolid
+        onPress={() => {
+          try {
+            navigation.navigate('LogInScreen');
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={[
+          styles.ButtonSolidwK,
+          {
+            backgroundColor: theme.colors.custom_rgb255_192_203,
+            color: theme.colors.custom_rgb0_0_0,
+          },
+        ]}
+        title="Sign Up"
+      >
+        {`Sign Up`}
+      </ButtonSolid>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  Texts0: {
+    alignSelf: 'stretch',
+    marginRight: 70,
+    marginLeft: 70,
+    marginTop: 10,
+    paddingLeft: 75,
+    paddingRight: 50,
+    fontSize: 20,
+    textAlign: 'left',
+    fontFamily: 'System',
+    fontWeight: '600',
+  },
+  TextxA: {
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '500',
+    marginTop: 70,
+    marginRight: 250,
+    marginLeft: 30,
+  },
+  TextField_3s: {
+    marginLeft: 30,
+    marginRight: 150,
+    left: 90,
+    bottom: 40,
+  },
+  TextFC: {
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '500',
+    marginTop: 30,
+    marginRight: 250,
+    marginLeft: 30,
+  },
+  TextFieldyu: {
+    marginLeft: 30,
+    marginRight: 150,
+    left: 90,
+    bottom: 40,
+  },
+  Text_3V: {
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '500',
+    marginTop: 30,
+    marginRight: 250,
+    marginLeft: 30,
+  },
+  TextFieldyE: {
+    marginLeft: 30,
+    marginRight: 150,
+    left: 90,
+    bottom: 40,
+  },
+  TextQS: {
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '500',
+    marginTop: 30,
+    marginRight: 250,
+    marginLeft: 30,
+  },
+  TextFieldSL: {
+    marginLeft: 30,
+    marginRight: 150,
+    left: 90,
+    bottom: 40,
+  },
+  TextAI: {
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '500',
+    marginTop: 50,
+    marginRight: 250,
+    marginLeft: 30,
+  },
+  ImageUi: {
+    width: 100,
+    height: 100,
+    left: 150,
+    bottom: 66,
+  },
+  ButtonSolidwK: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    bottom: 40,
+    marginLeft: 50,
+    marginRight: 50,
+    marginBottom: 15,
+  },
+});
+
+export default withTheme(RegisterScreen);
