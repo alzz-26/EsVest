@@ -1,0 +1,154 @@
+import React from 'react';
+import {
+  ButtonSolid,
+  CircleImage,
+  Divider,
+  Row,
+  ScreenContainer,
+  Surface,
+  withTheme,
+} from '@draftbit/ui';
+import { StyleSheet, Text } from 'react-native';
+
+const ConnectScreen = props => {
+  const { theme } = props;
+
+  return (
+    <ScreenContainer
+      style={{ backgroundColor: theme.colors.custom_rgb135_206_235 }}
+    >
+      <Surface style={{ backgroundColor: theme.colors.primary }}>
+        <Text style={[styles.TextTb, { color: theme.colors.strong }]}>
+          {'Accept/Decline'}
+        </Text>
+      </Surface>
+
+      <Row justifyContent="space-between" alignItems="flex-start">
+        <CircleImage
+          source={{
+            uri: 'https://static.draftbit.com/images/placeholder-image.png',
+          }}
+          size={50}
+        />
+        <ButtonSolid
+          style={[
+            styles.ButtonSolidJ6,
+            {
+              backgroundColor: theme.colors.custom_rgb255_192_203,
+              color: theme.colors.custom_rgb0_0_0,
+            },
+          ]}
+          title="Accept"
+        >
+          {`Sign Up`}
+        </ButtonSolid>
+
+        <ButtonSolid
+          style={[
+            styles.ButtonSolidth,
+            {
+              backgroundColor: theme.colors.custom_rgb255_192_203,
+              color: theme.colors.custom_rgb0_0_0,
+            },
+          ]}
+          title="Decline"
+        >
+          {`Sign Up`}
+        </ButtonSolid>
+      </Row>
+
+      <Text style={[styles.Textb8, { color: theme.colors.strong }]}>
+        {"Investor's Message"}
+      </Text>
+      <Divider style={styles.Divider_9e} color={theme.colors.divider} />
+      <Row justifyContent="space-between" alignItems="flex-start">
+        <CircleImage
+          source={{
+            uri: 'https://static.draftbit.com/images/placeholder-image.png',
+          }}
+          size={50}
+        />
+        <ButtonSolid
+          style={[
+            styles.ButtonSolidjd,
+            {
+              backgroundColor: theme.colors.custom_rgb255_192_203,
+              color: theme.colors.custom_rgb0_0_0,
+            },
+          ]}
+          title="Accept"
+        >
+          {`Sign Up`}
+        </ButtonSolid>
+
+        <ButtonSolid
+          style={[
+            styles.ButtonSolidSe,
+            {
+              backgroundColor: theme.colors.custom_rgb255_192_203,
+              color: theme.colors.custom_rgb0_0_0,
+            },
+          ]}
+          title="Decline"
+        >
+          {`Sign Up`}
+        </ButtonSolid>
+      </Row>
+
+      <Text style={[styles.Text_6b, { color: theme.colors.strong }]}>
+        {"Investor's Message"}
+      </Text>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  TextTb: {
+    fontSize: 20,
+    fontFamily: 'System',
+    fontWeight: '600',
+    paddingLeft: 50,
+    paddingRight: 40,
+    marginTop: 10,
+    marginLeft: 70,
+    marginRight: 70,
+  },
+  ButtonSolidJ6: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  ButtonSolidth: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  Textb8: {
+    marginTop: 20,
+    paddingLeft: 30,
+  },
+  Divider_9e: {
+    height: 5,
+    marginTop: 20,
+  },
+  ButtonSolidjd: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  ButtonSolidSe: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+  },
+  Text_6b: {
+    marginTop: 20,
+    paddingLeft: 30,
+  },
+});
+
+export default withTheme(ConnectScreen);
