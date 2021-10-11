@@ -1,0 +1,126 @@
+import React from 'react';
+import {
+  ButtonSolid,
+  ScreenContainer,
+  Surface,
+  TextField,
+  withTheme,
+} from '@draftbit/ui';
+import { StyleSheet, Text } from 'react-native';
+
+const SendInterestScreen = props => {
+  const { theme } = props;
+
+  const [textFieldValue, setTextFieldValue] = React.useState('');
+
+  return (
+    <ScreenContainer
+      style={{ backgroundColor: theme.colors.custom_rgb135_206_235 }}
+      scrollable={true}
+    >
+      <Surface style={{ backgroundColor: theme.colors.primary }}>
+        <Text style={[styles.Text_1O, { color: theme.colors.strong }]}>
+          {'Send Interest'}
+        </Text>
+      </Surface>
+
+      <Text style={[styles.TextaN, { color: theme.colors.strong }]}>
+        {'Message/Quaries'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextFieldla}
+        placeholder="Mention any of your views, bid, etc"
+        type="solid"
+        multiline={true}
+        value={textFieldValue}
+      />
+      <Text style={[styles.TextBV, { color: theme.colors.strong }]}>
+        {'Additional Contact Details'}
+      </Text>
+      <TextField
+        onChangeText={textFieldValue => {
+          try {
+            setTextFieldValue(textFieldValue);
+          } catch (err) {
+            console.error(err);
+          }
+        }}
+        style={styles.TextFieldSo}
+        placeholder="Any other contact other than mentioned in investor's profile"
+        type="solid"
+        multiline={true}
+        value={textFieldValue}
+      />
+      <ButtonSolid
+        style={[
+          styles.ButtonSolidKt,
+          {
+            backgroundColor: theme.colors.custom_rgb255_192_203,
+            color: theme.colors.custom_rgb0_0_0,
+          },
+        ]}
+        title="Send"
+      >
+        {`Sign Up`}
+      </ButtonSolid>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  Text_1O: {
+    fontSize: 20,
+    fontFamily: 'System',
+    fontWeight: '600',
+    paddingLeft: 60,
+    paddingRight: 50,
+    marginTop: 10,
+    marginLeft: 70,
+    marginRight: 70,
+  },
+  TextaN: {
+    marginTop: 40,
+    paddingLeft: 30,
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '600',
+  },
+  TextFieldla: {
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 20,
+  },
+  TextBV: {
+    marginTop: 40,
+    paddingLeft: 30,
+    textDecorationLine: 'underline',
+    fontSize: 18,
+    fontFamily: 'System',
+    fontWeight: '600',
+  },
+  TextFieldSo: {
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 20,
+  },
+  ButtonSolidKt: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    marginLeft: 50,
+    marginRight: 50,
+    marginBottom: 15,
+    marginTop: 40,
+  },
+});
+
+export default withTheme(SendInterestScreen);
