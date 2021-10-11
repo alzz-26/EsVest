@@ -1,0 +1,280 @@
+import React from 'react';
+import {
+  ButtonSolid,
+  CircleImage,
+  ScreenContainer,
+  Surface,
+  withTheme,
+} from '@draftbit/ui';
+import { StyleSheet, Text } from 'react-native';
+
+const HomeScreen = props => {
+  const { theme } = props;
+  const { navigation } = props;
+
+  return (
+    <ScreenContainer
+      style={[
+        styles.screen,
+        {
+          backgroundColor: theme.colors.custom_rgb135_206_235,
+          borderColor: theme.colors.error,
+          borderRadius: 0,
+        },
+      ]}
+      scrollable={true}
+    >
+      <Surface style={{ backgroundColor: theme.colors.primary }}>
+        <Text style={[styles.TextuH, { color: theme.colors.strong }]}>
+          {'Home'}
+        </Text>
+      </Surface>
+
+      <Surface
+        style={[
+          styles.Surfacezq,
+          { borderRadius: 14, backgroundColor: theme.colors.strongInverse },
+        ]}
+      >
+        <CircleImage
+          style={styles.CircleImageEg}
+          source={{
+            uri: 'https://static.draftbit.com/images/placeholder-image.png',
+          }}
+          size={80}
+        />
+        <Text style={[styles.TextL6, { color: theme.colors.strong }]}>
+          {'ABC corp'}
+        </Text>
+
+        <Text style={[styles.TextAA, { color: theme.colors.strong }]}>
+          {'Theme - FinTech'}
+        </Text>
+
+        <ButtonSolid
+          onPress={() => {
+            try {
+              navigation.navigate('InvestorScreen');
+            } catch (err) {
+              console.error(err);
+            }
+          }}
+          style={[
+            styles.ButtonSolidMn,
+            {
+              backgroundColor: theme.colors.custom_rgb255_192_203,
+              color: theme.colors.custom_rgb0_0_0,
+            },
+          ]}
+          title="Know More"
+        >
+          {`Sign Up`}
+        </ButtonSolid>
+      </Surface>
+
+      <Surface
+        style={[
+          styles.SurfacekL,
+          { borderRadius: 14, backgroundColor: theme.colors.strongInverse },
+        ]}
+      >
+        <CircleImage
+          style={styles.CircleImageqg}
+          source={{
+            uri: 'https://static.draftbit.com/images/placeholder-image.png',
+          }}
+          size={80}
+        />
+        <Text style={[styles.TextyV, { color: theme.colors.strong }]}>
+          {'DEF corp'}
+        </Text>
+
+        <Text style={[styles.TextSV, { color: theme.colors.strong }]}>
+          {'Theme - EduTech'}
+        </Text>
+
+        <ButtonSolid
+          onPress={() => {
+            try {
+              navigation.navigate('InvesteeScreen');
+            } catch (err) {
+              console.error(err);
+            }
+          }}
+          style={[
+            styles.ButtonSolidnO,
+            {
+              backgroundColor: theme.colors.custom_rgb255_192_203,
+              color: theme.colors.custom_rgb0_0_0,
+            },
+          ]}
+          title="Check Status"
+        >
+          {`Sign Up`}
+        </ButtonSolid>
+      </Surface>
+
+      <Surface
+        style={[
+          styles.Surface_0S,
+          { borderRadius: 14, backgroundColor: theme.colors.strongInverse },
+        ]}
+      >
+        <CircleImage
+          style={styles.CircleImagecr}
+          source={{
+            uri: 'https://static.draftbit.com/images/placeholder-image.png',
+          }}
+          size={80}
+        />
+        <Text style={[styles.Text_01, { color: theme.colors.strong }]}>
+          {'GHI corp'}
+        </Text>
+
+        <Text style={[styles.TextLY, { color: theme.colors.strong }]}>
+          {'Theme - FinTech'}
+        </Text>
+
+        <ButtonSolid
+          onPress={() => {
+            try {
+              navigation.navigate('InvestorScreen');
+            } catch (err) {
+              console.error(err);
+            }
+          }}
+          style={[
+            styles.ButtonSolidh4,
+            {
+              backgroundColor: theme.colors.custom_rgb255_192_203,
+              color: theme.colors.custom_rgb0_0_0,
+            },
+          ]}
+          title="Know More"
+        >
+          {`Sign Up`}
+        </ButtonSolid>
+      </Surface>
+    </ScreenContainer>
+  );
+};
+
+const styles = StyleSheet.create({
+  TextuH: {
+    fontSize: 20,
+    fontFamily: 'System',
+    fontWeight: '600',
+    paddingLeft: 75,
+    paddingRight: 50,
+    marginTop: 10,
+    marginLeft: 70,
+    marginRight: 70,
+  },
+  CircleImageEg: {
+    top: 20,
+    left: 90,
+  },
+  TextL6: {
+    fontFamily: 'System',
+    fontWeight: '700',
+    fontSize: 18,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30,
+  },
+  TextAA: {
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30,
+  },
+  ButtonSolidMn: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    bottom: 40,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 50,
+  },
+  Surfacezq: {
+    width: 250,
+    height: 250,
+    marginTop: 40,
+    marginLeft: 60,
+    marginRight: 30,
+  },
+  CircleImageqg: {
+    top: 20,
+    left: 90,
+  },
+  TextyV: {
+    fontFamily: 'System',
+    fontWeight: '700',
+    fontSize: 18,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30,
+  },
+  TextSV: {
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30,
+  },
+  ButtonSolidnO: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    bottom: 40,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 50,
+  },
+  SurfacekL: {
+    width: 250,
+    height: 250,
+    marginTop: 40,
+    marginLeft: 60,
+    marginRight: 30,
+  },
+  CircleImagecr: {
+    top: 20,
+    left: 90,
+  },
+  Text_01: {
+    fontFamily: 'System',
+    fontWeight: '700',
+    fontSize: 18,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30,
+  },
+  TextLY: {
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 30,
+  },
+  ButtonSolidh4: {
+    borderRadius: 19,
+    fontFamily: 'System',
+    fontWeight: '600',
+    textAlign: 'center',
+    bottom: 40,
+    marginLeft: 50,
+    marginRight: 50,
+    marginTop: 50,
+  },
+  Surface_0S: {
+    width: 250,
+    height: 250,
+    marginTop: 40,
+    marginLeft: 60,
+    marginRight: 30,
+  },
+  screen: {
+    borderStyle: 'dashed',
+  },
+});
+
+export default withTheme(HomeScreen);
